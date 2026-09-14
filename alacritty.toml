@@ -18,6 +18,9 @@ size = 14.0
 [cursor]
 style = { shape = "Block", blinking = "On" }
 
+[mouse]
+hide_when_typing = true
+
 [scrolling]
 history = 10000
 multiplier = 3
