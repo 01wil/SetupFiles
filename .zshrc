@@ -106,7 +106,7 @@ bindkey -v
 alias nv="nvim"
 alias v="nvim"
 alias n="nvim"
-alias c="zoxide"
+alias c="z"
 
 # added:
 export LC_ALL=en_US.UTF-8
