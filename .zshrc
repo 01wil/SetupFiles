@@ -107,6 +107,7 @@ alias nv="nvim"
 alias v="nvim"
 alias n="nvim"
 alias c="z"
+alias occ='opencode -c'
 
 # added:
 export LC_ALL=en_US.UTF-8
