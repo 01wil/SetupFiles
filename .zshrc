@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.   
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-if [ "$TMUX" = "" ]; then tmux; fi
+# attach to the running server; on a fresh server restore the last save instead of adding a session
+if [ -z "$TMUX" ]; then
+  tmux attach 2>/dev/null || { tmux new-session -d; tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; tmux attach; }
+fi
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -11,7 +14,7 @@ plugins=(git)
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/will/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
 # Set name of the theme to load --- if set to "random", it will
@@ -111,6 +114,6 @@ alias occ='opencode -c'
 
 # added:
 export LC_ALL=en_US.UTF-8
-export PATH=/Users/will/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
